@@ -43,9 +43,9 @@ class PlantasController extends Controller
         Plantas::create([
             'popular' => $request->popular,
             'cientifico' => $request->cientifico,
-     //       'quantidade' => $request->quantidade,
+            'quantidade' => $request->quantidade,
         ]);
-     //   return redirect('/plantas');
+       return redirect('/plantas');
     }
 
     /**
