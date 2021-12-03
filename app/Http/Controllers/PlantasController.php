@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePlantasRequest;
 use App\Http\Requests\UpdatePlantasRequest;
 use App\Models\Plantas;
+use Illuminate\Support\Facades\Auth;
 
 class PlantasController extends Controller
 {
@@ -44,6 +45,7 @@ class PlantasController extends Controller
             'popular' => $request->popular,
             'cientifico' => $request->cientifico,
             'quantidade' => $request->quantidade,
+            'user_id' => Auth::user()->id,
         ]);
        return redirect('/plantas');
     }
