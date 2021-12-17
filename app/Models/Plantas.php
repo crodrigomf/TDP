@@ -10,4 +10,8 @@ class Plantas extends Model
     use HasFactory;
 
     protected $fillable = ['popular','cientifico','quantidade','user_id'];
+
+    public function dono(){
+        return $this->belongsTo(User::class,"user_id","id");
+    }
 }

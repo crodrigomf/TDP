@@ -92,6 +92,9 @@ class PlantasController extends Controller
      */
     public function destroy(Plantas $plantas)
     {
-        //
+       if ($plantas -> user_id == Auth::user()->id){
+           $plantas -> delete();
+       }
+       return redirect('/plantas');
     }
 }

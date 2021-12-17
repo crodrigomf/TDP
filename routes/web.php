@@ -25,3 +25,4 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('plantas', PlantasController::class)->middleware(['auth']);
+Route::get("/planta/delete/{plantas}",[PlantasController::class,"destroy"])->middleware(['auth'])->name("deleteplanta");

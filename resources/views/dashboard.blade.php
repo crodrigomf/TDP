@@ -15,4 +15,35 @@
             </div>
         </div>
     </div>
+  
+    <div>
+              
+        <table class=" bg-white max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <tr>
+               <th>Popular</th>
+               <th>Cientifico</th>
+               <th>Quantidade</th>
+               <th>Nome do Dono</th>
+               <th>Telefone</th>
+            </tr>
+            @foreach (\App\Models\Plantas::where("user_id", "<>", Auth::user()->id)->get() as $planta)
+               <tr> 
+                  <td> 
+                     {{$planta->popular}} 
+                  </td>
+                  <td> 
+                     {{$planta->cientifico}} 
+                  </td>
+                  <td> 
+                     {{$planta->quantidade}} 
+                  </td>
+                  <td>
+                    {{$planta->dono->name}}
+                  </td>
+                  <td>
+                    {{$planta->dono->telefone}} 
+                  </td>
+             @endforeach
+    </div>
+   
 </x-app-layout>
