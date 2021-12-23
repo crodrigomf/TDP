@@ -1,4 +1,20 @@
 <x-app-layout>
+   <script>
+      function funcao1()
+      {
+      var x;
+      var r=confirm("Você realmente quer deletar?");
+      if (r==true)
+        {
+        x="você pressionou OK!";
+        }
+      else
+        {
+        x="Você pressionou Cancelar!";
+        }
+      document.getElementById("demo").innerHTML=x;
+      }
+      </script>
 
 <h1>Você está em sua página de plantas</h1>
 <table class=" bg-white max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -19,7 +35,7 @@
             {{$planta->quantidade}} 
          </td>
          <td>
-            <a href="{{route("deleteplanta",$planta)}}">Deletar</a>
+            <a href="{{route("deleteplanta",$planta)}}" onclick="funcao1()">Deletar</a>
          </td>
       </tr> 
    @endforeach
